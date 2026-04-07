@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ticketera Operativa | Tasatop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- =========================
+       LOGIN
+       ========================= -->
+  <main class="login-screen" id="loginScreen">
+    <section class="login-card">
+      <div class="login-brand">
+        <!-- CAMBIAR AQUÍ EL LOGO -->
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtvn2q7UpL-JdLvpmsELMqczmmZQK_72PPGw&s"
+          alt="Logo Tasatop"
+          class="login-logo"
+        />
+        <p class="brand-company">Tasatop</p>
+        <h1>Ticketera Operativa</h1>
+        <p class="brand-text">
+          Acceso interno al sistema de canalización de requerimientos hacia el Área de Operaciones.
+        </p>
+      </div>
+
+      <form id="loginForm" class="login-form" novalidate>
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" placeholder="Ingresa tu usuario" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <div class="password-wrap">
+            <input type="password" id="password" placeholder="Ingresa tu contraseña" required />
+            <button type="button" id="togglePassword" class="toggle-password">Ver</button>
+          </div>
+        </div>
+
+        <p id="loginError" class="error-message"></p>
+
+        <button type="submit" class="btn btn-primary btn-full">Ingresar</button>
+      </form>
+
+      <div class="login-foot">
+        <p>Uso interno · Tasatop</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       APP
+       ========================= -->
+  <div class="app-layout hidden" id="appLayout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="sidebar-brand">
+          <!-- CAMBIAR AQUÍ EL LOGO -->
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtvn2q7UpL-JdLvpmsELMqczmmZQK_72PPGw&s"
+            alt="Tasatop"
+            class="sidebar-logo"
+          />
+          <div>
+            <p class="sidebar-company">Tasatop</p>
+            <h2 class="sidebar-title">Ticketera Operativa</h2>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <button class="nav-link active" data-page="inicio">Inicio</button>
+          <button class="nav-link" data-page="proposito">¿Para qué sirve la ticketera?</button>
+          <button class="nav-link" data-page="tutorial">Tutorial de uso</button>
+          <button class="nav-link" data-page="ayuda">Ayuda y soporte</button>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <button id="logoutBtn" class="btn btn-secondary btn-full">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="content">
+      <header class="topbar">
+        <button id="menuToggle" class="menu-btn" aria-label="Abrir menú">☰</button>
+        <div class="topbar-badge" id="topbarBadge">Uso interno</div>
+      </header>
+
+      <!-- =========================
+           VISTA: INICIO
+           ========================= -->
+      <section class="page-view active" id="page-inicio">
+        <section class="hero">
+          <div class="hero-logo-box">
+            <!-- CAMBIAR AQUÍ EL LOGO -->
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtvn2q7UpL-JdLvpmsELMqczmmZQK_72PPGw&s"
+              alt="Tasatop"
+              class="hero-logo"
+            />
+          </div>
+
+          <div class="hero-info">
+            <div>
+              <p class="section-kicker">Sistema interno</p>
+              <h1>Ticketera Operativa</h1>
+              <p class="hero-text">
+                Selecciona la etapa correcta del requerimiento para dirigirlo al formulario correspondiente.
+              </p>
+            </div>
+
+            <div class="hero-mini-cards">
+              <div class="mini-card">
+                <span>Enfoque</span>
+                <strong>Orden y trazabilidad</strong>
+              </div>
+              <div class="mini-card">
+                <span>Área responsable</span>
+                <strong>Operaciones</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="section-header">
+            <p class="section-kicker">Etapas disponibles</p>
+            <h2>Selecciona la etapa correcta</h2>
+            <p>
+              Cada tarjeta dirige al formulario específico según el momento del proceso operativo.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <!-- CAMBIAR AQUÍ LOS LINKS DE FORMULARIOS -->
+            <article class="ticket-card" data-link="https://forms.gle/HGKFrBdSA1AS54N48" tabindex="0">
+              <div class="ticket-badge">Antes de firma</div>
+              <h3>Pre-Inversión</h3>
+              <p>
+                Solicitudes previas a la evaluación, validación, preparación documental o estructuración de la operación.
+              </p>
+              <span class="card-link-text">Abrir formulario →</span>
+            </article>
+
+            <article class="ticket-card" data-link="https://forms.gle/J8D4tbiW9uXC7pM38" tabindex="0">
+              <div class="ticket-badge">Durante firma y cierre</div>
+              <h3>Inversión</h3>
+              <p>
+                Requerimientos vinculados al proceso activo de firma, formalización y cierre de la operación.
+              </p>
+              <span class="card-link-text">Abrir formulario →</span>
+            </article>
+
+            <article class="ticket-card" data-link="https://forms.gle/g5r8CcZX4jjtHbPc7" tabindex="0">
+              <div class="ticket-badge">Después de firma</div>
+              <h3>Post-Inversión</h3>
+              <p>
+                Solicitudes posteriores a la firma, relacionadas con pagos, movimientos, certificados y soporte operativo.
+              </p>
+              <span class="card-link-text">Abrir formulario →</span>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <!-- =========================
+           VISTA: PROPOSITO
+           ========================= -->
+      <section class="page-view" id="page-proposito">
+        <section class="page-section">
+          <div class="section-header">
+            <p class="section-kicker">Propósito del sistema</p>
+            <h1>¿Para qué sirve la ticketera?</h1>
+            <p>
+              La Ticketera Operativa sirve para ordenar, centralizar y dar trazabilidad a los requerimientos que se canalizan hacia el Área de Operaciones.
+            </p>
+          </div>
+
+          <div class="content-grid two-columns">
+            <div class="info-card">
+              <h3>Objetivo principal</h3>
+              <p>
+                Convierte pedidos dispersos en un flujo ordenado, visible y medible.
+              </p>
+              <ul class="content-list">
+                <li>Registrar solicitudes formalmente.</li>
+                <li>Identificar quién pidió qué.</li>
+                <li>Ubicar el requerimiento según la etapa del proceso.</li>
+                <li>Asignar responsables.</li>
+                <li>Hacer seguimiento de estados.</li>
+                <li>Dejar evidencia del ingreso, atención y cierre.</li>
+                <li>Facilitar reportes y medición.</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Usuarios de la ticketera</h3>
+              <div class="sub-block">
+                <h4>Solicitantes</h4>
+                <p>
+                  Son quienes generan requerimientos mediante formularios. Principalmente el Área Comercial y áreas afines vinculadas directamente con Operaciones.
+                </p>
+              </div>
+              <div class="sub-block">
+                <h4>Área de Operaciones</h4>
+                <p>
+                  Es el equipo que recibe, revisa, atiende y da seguimiento a los tickets.
+                </p>
+                <ul class="content-list">
+                  <li>Revisa tickets nuevos.</li>
+                  <li>Asigna o reasigna responsables.</li>
+                  <li>Cambia estados.</li>
+                  <li>Da seguimiento.</li>
+                  <li>Cierra o anula tickets.</li>
+                  <li>Deja comentarios internos.</li>
+                  <li>Controla la trazabilidad operativa.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card full-width">
+            <h3>Lógica correcta de clasificación</h3>
+            <div class="logic-grid">
+              <div class="logic-box">
+                <strong>Pre-Inversión</strong>
+                <span>Antes de firma</span>
+              </div>
+              <div class="logic-box">
+                <strong>Inversión</strong>
+                <span>Durante firma y cierre</span>
+              </div>
+              <div class="logic-box">
+                <strong>Post-Inversión</strong>
+                <span>Después de firma</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card full-width">
+            <h3>Uso por etapa</h3>
+            <div class="three-cols">
+              <div class="stage-card">
+                <h4>Pre-Inversión</h4>
+                <p>Se usa cuando el requerimiento ocurre antes de que la operación quede firmada y cerrada.</p>
+                <ul class="content-list">
+                  <li>Todavía no se ha firmado el contrato.</li>
+                  <li>Todavía no se ha firmado el pagaré.</li>
+                  <li>Aún se revisan documentos.</li>
+                  <li>Se necesita corregir o completar información.</li>
+                  <li>Se requiere ajustar condiciones antes de formalizar.</li>
+                </ul>
+              </div>
+
+              <div class="stage-card">
+                <h4>Inversión</h4>
+                <p>Se usa cuando la operación ya está en etapa de firma, cierre o formalización.</p>
+                <ul class="content-list">
+                  <li>Ya se enviaron documentos para firma.</li>
+                  <li>Se está haciendo seguimiento de firmas.</li>
+                  <li>Hubo observaciones o problemas durante la firma.</li>
+                  <li>Se coordina el cierre formal de la operación.</li>
+                  <li>La operación está en el tramo final antes de completarse.</li>
+                </ul>
+              </div>
+
+              <div class="stage-card">
+                <h4>Post-Inversión</h4>
+                <p>Se usa cuando la operación ya fue firmada y el requerimiento ocurre después del cierre.</p>
+                <ul class="content-list">
+                  <li>La operación ya está firmada.</li>
+                  <li>Ya se desembolsó o ya está vigente.</li>
+                  <li>Existen movimientos posteriores.</li>
+                  <li>Hay requerimientos administrativos, financieros o documentarios posteriores.</li>
+                  <li>Se necesita soporte operativo sobre una operación ya cerrada.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card full-width">
+            <h3>Casos ejemplo por etapa</h3>
+            <div class="three-cols">
+              <div class="stage-card">
+                <h4>Pre-Inversión</h4>
+                <ul class="content-list">
+                  <li>Generación de contrato y pagaré de un cliente nuevo.</li>
+                  <li>Corrección de DNI o razón social en documento borrador.</li>
+                  <li>Revisión de vigencia de poderes.</li>
+                </ul>
+              </div>
+
+              <div class="stage-card">
+                <h4>Inversión</h4>
+                <ul class="content-list">
+                  <li>Validar si el contrato ya fue firmado.</li>
+                  <li>Fallas en firma digital.</li>
+                  <li>Coordinación de firma notarial.</li>
+                </ul>
+              </div>
+
+              <div class="stage-card">
+                <h4>Post-Inversión</h4>
+                <ul class="content-list">
+                  <li>Cancelación anticipada y procesamiento del pago.</li>
+                  <li>Solicitud de certificado de retención.</li>
+                  <li>Cambio de cuenta bancaria del inversionista.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- =========================
+           VISTA: TUTORIAL
+           ========================= -->
+      <section class="page-view" id="page-tutorial">
+        <section class="page-section">
+          <div class="section-header">
+            <p class="section-kicker">Tutorial</p>
+            <h1>Tutorial de uso</h1>
+            <p>
+              Consulta esta guía para usar correctamente la Ticketera Operativa y elegir la etapa adecuada.
+            </p>
+          </div>
+
+          <div class="content-grid two-columns">
+            <div class="info-card">
+              <h3>Video tutorial</h3>
+
+              <!-- CAMBIAR AQUÍ EL ENLACE DEL VIDEO -->
+              <div class="video-box">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Tutorial Ticketera Operativa"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <p class="video-note">
+                Reemplaza este enlace por el video oficial del tutorial.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3>Paso a paso</h3>
+              <ol class="steps-list">
+                <li>Iniciar sesión con usuario y contraseña.</li>
+                <li>Identificar en qué etapa del proceso se encuentra el requerimiento.</li>
+                <li>Ir a Inicio desde el menú lateral.</li>
+                <li>Hacer clic en la tarjeta correspondiente.</li>
+                <li>Completar el formulario correcto.</li>
+                <li>En caso de duda, revisar Ayuda y soporte.</li>
+              </ol>
+
+              <div class="highlight-box">
+                <h4>Recomendación clave</h4>
+                <p>
+                  La clasificación debe hacerse por momento del proceso: antes de firma, durante firma o después de firma.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- =========================
+           VISTA: AYUDA
+           ========================= -->
+      <section class="page-view" id="page-ayuda">
+        <section class="page-section">
+          <div class="section-header">
+            <p class="section-kicker">Ayuda y soporte</p>
+            <h1>Información de soporte y criterios de uso</h1>
+            <p>
+              Esta sección te orienta sobre cuándo usar cada formulario y qué errores evitar al clasificar un requerimiento.
+            </p>
+          </div>
+
+          <div class="content-grid two-columns">
+            <div class="info-card">
+              <h3>Información de soporte</h3>
+              <!-- CAMBIAR AQUÍ LOS DATOS DE SOPORTE -->
+              <ul class="support-list">
+                <li><strong>Área responsable:</strong> Área de Operaciones</li>
+                <li><strong>Jefe de Operaciones:</strong> Diego Quispe</li>
+                <li><strong>Correo jefe de operaciones:</strong> <a href="mailto:dquispe@tasatop.com">dquispe@tasatop.com</a></li>
+                <li><strong>Correo de soporte:</strong> <a href="mailto:gtaipe@tasatop.com">gtaipe@tasatop.com</a></li>
+                <li><strong>Número de ayuda:</strong> <a href="tel:919284229">919284229</a></li>
+                <li><strong>Horario de atención:</strong> Lunes a Viernes de 9am a 6pm</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Cuándo usar cada formulario</h3>
+              <ul class="content-list">
+                <li><strong>Pre-Inversión:</strong> cuando el caso aún no ha sido firmado y sigue en revisión o preparación.</li>
+                <li><strong>Inversión:</strong> cuando el caso ya está en proceso de firma, formalización o cierre.</li>
+                <li><strong>Post-Inversión:</strong> cuando la operación ya fue firmada y el requerimiento ocurre después.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-card full-width">
+            <h3>Ejemplos por etapa</h3>
+            <div class="three-cols">
+              <div class="stage-card">
+                <h4>Pre-Inversión</h4>
+                <ul class="content-list">
+                  <li>Generación de contrato y pagaré.</li>
+                  <li>Corrección de datos en documentos.</li>
+                  <li>Validación documental.</li>
+                  <li>Revisión de vigencia de poderes.</li>
+                  <li>Excepción de tasas.</li>
+                  <li>Simulación o ajuste de cronograma.</li>
+                </ul>
+              </div>
+
+              <div class="stage-card">
+                <h4>Inversión</h4>
+                <ul class="content-list">
+                  <li>Envío a firma.</li>
+                  <li>Reenvío a firma.</li>
+                  <li>Seguimiento de firmas.</li>
+                  <li>Problemas con firma digital.</li>
+                  <li>Rechazo de firma.</li>
+                  <li>Coordinación notarial.</li>
+                </ul>
+              </div>
+
+              <div class="stage-card">
+                <h4>Post-Inversión</h4>
+                <ul class="content-list">
+                  <li>Pago de capital.</li>
+                  <li>Pago de intereses.</li>
+                  <li>Devolución de capital.</li>
+                  <li>Validación de vouchers.</li>
+                  <li>Certificados de retención.</li>
+                  <li>Cambio de cuenta bancaria.</li>
+                  <li>Cambio de datos.</li>
+                  <li>Adendas o modificaciones contractuales.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card full-width">
+            <h3>Errores comunes al elegir la etapa</h3>
+            <div class="error-grid">
+              <div class="error-card">No clasificar por documento, sino por momento del proceso.</div>
+              <div class="error-card">No mandar a Post-Inversión algo que aún no ha sido firmado.</div>
+              <div class="error-card">No usar Inversión para casos que siguen en revisión previa.</div>
+              <div class="error-card">No abusar de la categoría “Otro”.</div>
+              <div class="error-card">Identificar correctamente si está antes de firma, en firma o después de firma.</div>
+              <div class="error-card">No atender requerimientos por chat o correo suelto sin registrar ticket.</div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
